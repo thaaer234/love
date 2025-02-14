@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sham  Music</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- استدعاء مكتبة particles.js لرسم القلوب المتحركة -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- استدعاء مكتبة Font Awesome للأيقونات العصرية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
+
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <h1 class="header-title">Sham</h1>
+    </header>
+
+    <!-- أزرار التنقل بين الأقسام -->
+    <nav>
+        <button class="nav-btn" onclick="showSection('quran-section')">الاقتباسات القرآنية</button>
+        <button class="nav-btn" onclick="showSection('music-section')">الموسيقى</button>
+        <button class="nav-btn" onclick="showSection('photo-gallery')">صور شام</button>
+    </nav>
+
+    <!-- قسم الموسيقى -->
+    <section id="music-section" class="content-section">
+        <div class="music-player">
+            <div class="album-cover">
+                <img src="./img/sham1.jpg" alt="Cover Art">
+            </div>
+            <div class="controls">
+                <button class="control-btn" onclick="prevSong()"><i class="fas fa-step-backward"></i></button>
+                <button class="control-btn" onclick="togglePlay()" id="play-pause"><i class="fas fa-play"></i></button>
+                <button class="control-btn" onclick="nextSong()"><i class="fas fa-step-forward"></i></button>
+            </div>
+            <p id="song-title">music</p>
+        </div>
+
+        <!-- قائمة الأغاني المفضلة -->
+        <div class="favorite-songs">
+            <h3>الأغاني المفضلة</h3>
+            <ul id="song-list">
+                <!-- سيتم إضافة الأغاني هنا تلقائيًا -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- قسم الاقتباسات القرآنية وصور شام كما هو -->
+    <section id="quran-section" class="content-section">
+        <div class="quote-box">
+            <p id="quote"></p>
+            <small id="reference"></small>
+            <div class="quote-controls">
+                <button class="control-btn" onclick="prevQuote()"><i class="fas fa-chevron-left"></i></button>
+                <button class="control-btn" onclick="nextQuote()"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="photo-gallery" class="content-section">
+        <h2>اضغطي على صورك</h2>
+        <div class="gallery">
+            <img src="./img/sham1.jpg" alt="Sham Photo 1" onclick="showSuccessMessage()">
+            <img src="./img/sham2.jpg" alt="Sham Photo 2" onclick="showSuccessMessage()">
+            <img src="./img/sham3.jpg" alt="Sham Photo 3" onclick="showSuccessMessage()">
+            <img src="./img/sham4.jpg" alt="Sham Photo 4" onclick="showSuccessMessage()">
+            <img src="./img/sham5.jpg" alt="Sham Photo 5" onclick="showSuccessMessage()">
+            <img src="./img/sham6.jpg" alt="Sham Photo 6" onclick="showSuccessMessage()">
+            <img src="./img/sham7.jpg" alt="Sham Photo 7" onclick="showSuccessMessage()">
+        </div>
+    </section>
+
+    <!-- نافذة الرسالة -->
+    <div id="message-box" class="message-box">
+        <p id="message-content"></p>
+        <button onclick="closeMessage()" class="close-btn">إغلاق</button>
+    </div>
+
+    <!-- عنصر صوتي للموسيقى -->
+    <audio id="audio"></audio>
+
+    <!-- استدعاء ملف الجافاسكريبت -->
+    <script src="script.js"></script>
+</body>
+</html>
