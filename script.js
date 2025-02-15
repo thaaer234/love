@@ -74,7 +74,7 @@ function loadSongs() {
     const songList = document.getElementById("song-list");
 
     // 3 أغاني مفضلة
-    const favoriteSongs = ["song1.mp3", "song2.mp3", "song3.mp3"];
+    const favoriteSongs = ["song1.mp3", "song2.mp3", "song3.mp3", "song26.mp3", "song31.mp3", "song29.mp3", "song27.mp3", "song30.mp3", "song28.mp3"];
 
     favoriteSongs.forEach((songFile, index) => {
         let songTitle = songFile.replace('.mp3', '');  // استخراج اسم الأغنية بدون ".mp3"
@@ -89,7 +89,7 @@ function loadSongs() {
     });
 
     // باقي الأغاني (30 أغنية في البوكس)
-    for (let i = 4; i <= 30; i++) {  // بدءًا من الأغنية الرابعة
+    for (let i = 4; i <= 31; i++) {  // بدءًا من الأغنية الرابعة
         let songFile = `song${i}.mp3`;
         let songTitle = songFile.replace('.mp3', '');
         let song = { title: songTitle, src: `./music/${songFile}` };
